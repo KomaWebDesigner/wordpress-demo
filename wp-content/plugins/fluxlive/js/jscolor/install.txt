@@ -1,0 +1,5 @@
+To install new version or modified version of JSColor, just unzip the JSColor into the JS folder.
+File path should be js/jscolor/
+
+
+You may find new versions copies at jscolor.com

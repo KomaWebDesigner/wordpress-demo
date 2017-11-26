@@ -1,0 +1,100 @@
+[24-Nov-2017 10:06:38 UTC] PHP Warning:  sprintf(): Too few arguments in /home/ubuntu/workspace/wp-admin/includes/class-bulk-upgrader-skin.php on line 154
+[24-Nov-2017 10:06:38 UTC] PHP Stack trace:
+[24-Nov-2017 10:06:38 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-admin/themes.php:0
+[24-Nov-2017 10:06:38 UTC] PHP   2. require_once() /home/ubuntu/workspace/wp-admin/themes.php:10
+[24-Nov-2017 10:06:38 UTC] PHP   3. do_action() /home/ubuntu/workspace/wp-admin/admin.php:222
+[24-Nov-2017 10:06:38 UTC] PHP   4. WP_Hook->do_action() /home/ubuntu/workspace/wp-includes/plugin.php:453
+[24-Nov-2017 10:06:38 UTC] PHP   5. WP_Hook->apply_filters() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:323
+[24-Nov-2017 10:06:38 UTC] PHP   6. call_user_func_array:{/home/ubuntu/workspace/wp-includes/class-wp-hook.php:298}() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[24-Nov-2017 10:06:38 UTC] PHP   7. TGM_Plugin_Activation->install_plugins_page() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[24-Nov-2017 10:06:38 UTC] PHP   8. TGMPA_List_Table->process_bulk_actions() /home/ubuntu/workspace/wp-content/themes/maskitto-light/inc/plugins/tgm.php:658
+[24-Nov-2017 10:06:38 UTC] PHP   9. TGMPA_Bulk_Installer->bulk_install() /home/ubuntu/workspace/wp-content/themes/maskitto-light/inc/plugins/tgm.php:2892
+[24-Nov-2017 10:06:38 UTC] PHP  10. TGMPA_Bulk_Installer->run() /home/ubuntu/workspace/wp-content/themes/maskitto-light/inc/plugins/tgm.php:3289
+[24-Nov-2017 10:06:38 UTC] PHP  11. WP_Upgrader->run() /home/ubuntu/workspace/wp-content/themes/maskitto-light/inc/plugins/tgm.php:3173
+[24-Nov-2017 10:06:38 UTC] PHP  12. TGMPA_Bulk_Installer_Skin->after() /home/ubuntu/workspace/wp-admin/includes/class-wp-upgrader.php:757
+[24-Nov-2017 10:06:38 UTC] PHP  13. Bulk_Upgrader_Skin->after() /home/ubuntu/workspace/wp-content/themes/maskitto-light/inc/plugins/tgm.php:3553
+[24-Nov-2017 10:06:38 UTC] PHP  14. sprintf() /home/ubuntu/workspace/wp-admin/includes/class-bulk-upgrader-skin.php:154
+[24-Nov-2017 10:06:41 UTC] PHP Warning:  sprintf(): Too few arguments in /home/ubuntu/workspace/wp-admin/includes/class-bulk-upgrader-skin.php on line 154
+[24-Nov-2017 10:06:41 UTC] PHP Stack trace:
+[24-Nov-2017 10:06:41 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-admin/themes.php:0
+[24-Nov-2017 10:06:41 UTC] PHP   2. require_once() /home/ubuntu/workspace/wp-admin/themes.php:10
+[24-Nov-2017 10:06:41 UTC] PHP   3. do_action() /home/ubuntu/workspace/wp-admin/admin.php:222
+[24-Nov-2017 10:06:41 UTC] PHP   4. WP_Hook->do_action() /home/ubuntu/workspace/wp-includes/plugin.php:453
+[24-Nov-2017 10:06:41 UTC] PHP   5. WP_Hook->apply_filters() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:323
+[24-Nov-2017 10:06:41 UTC] PHP   6. call_user_func_array:{/home/ubuntu/workspace/wp-includes/class-wp-hook.php:298}() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[24-Nov-2017 10:06:41 UTC] PHP   7. TGM_Plugin_Activation->install_plugins_page() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[24-Nov-2017 10:06:41 UTC] PHP   8. TGMPA_List_Table->process_bulk_actions() /home/ubuntu/workspace/wp-content/themes/maskitto-light/inc/plugins/tgm.php:658
+[24-Nov-2017 10:06:41 UTC] PHP   9. TGMPA_Bulk_Installer->bulk_install() /home/ubuntu/workspace/wp-content/themes/maskitto-light/inc/plugins/tgm.php:2892
+[24-Nov-2017 10:06:41 UTC] PHP  10. TGMPA_Bulk_Installer->run() /home/ubuntu/workspace/wp-content/themes/maskitto-light/inc/plugins/tgm.php:3289
+[24-Nov-2017 10:06:41 UTC] PHP  11. WP_Upgrader->run() /home/ubuntu/workspace/wp-content/themes/maskitto-light/inc/plugins/tgm.php:3173
+[24-Nov-2017 10:06:41 UTC] PHP  12. TGMPA_Bulk_Installer_Skin->after() /home/ubuntu/workspace/wp-admin/includes/class-wp-upgrader.php:757
+[24-Nov-2017 10:06:41 UTC] PHP  13. Bulk_Upgrader_Skin->after() /home/ubuntu/workspace/wp-content/themes/maskitto-light/inc/plugins/tgm.php:3553
+[24-Nov-2017 10:06:41 UTC] PHP  14. sprintf() /home/ubuntu/workspace/wp-admin/includes/class-bulk-upgrader-skin.php:154
+[24-Nov-2017 10:06:43 UTC] PHP Warning:  sprintf(): Too few arguments in /home/ubuntu/workspace/wp-admin/includes/class-bulk-upgrader-skin.php on line 154
+[24-Nov-2017 10:06:43 UTC] PHP Stack trace:
+[24-Nov-2017 10:06:43 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-admin/themes.php:0
+[24-Nov-2017 10:06:43 UTC] PHP   2. require_once() /home/ubuntu/workspace/wp-admin/themes.php:10
+[24-Nov-2017 10:06:43 UTC] PHP   3. do_action() /home/ubuntu/workspace/wp-admin/admin.php:222
+[24-Nov-2017 10:06:43 UTC] PHP   4. WP_Hook->do_action() /home/ubuntu/workspace/wp-includes/plugin.php:453
+[24-Nov-2017 10:06:43 UTC] PHP   5. WP_Hook->apply_filters() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:323
+[24-Nov-2017 10:06:43 UTC] PHP   6. call_user_func_array:{/home/ubuntu/workspace/wp-includes/class-wp-hook.php:298}() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[24-Nov-2017 10:06:43 UTC] PHP   7. TGM_Plugin_Activation->install_plugins_page() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[24-Nov-2017 10:06:43 UTC] PHP   8. TGMPA_List_Table->process_bulk_actions() /home/ubuntu/workspace/wp-content/themes/maskitto-light/inc/plugins/tgm.php:658
+[24-Nov-2017 10:06:43 UTC] PHP   9. TGMPA_Bulk_Installer->bulk_install() /home/ubuntu/workspace/wp-content/themes/maskitto-light/inc/plugins/tgm.php:2892
+[24-Nov-2017 10:06:43 UTC] PHP  10. TGMPA_Bulk_Installer->run() /home/ubuntu/workspace/wp-content/themes/maskitto-light/inc/plugins/tgm.php:3289
+[24-Nov-2017 10:06:43 UTC] PHP  11. WP_Upgrader->run() /home/ubuntu/workspace/wp-content/themes/maskitto-light/inc/plugins/tgm.php:3173
+[24-Nov-2017 10:06:43 UTC] PHP  12. TGMPA_Bulk_Installer_Skin->after() /home/ubuntu/workspace/wp-admin/includes/class-wp-upgrader.php:757
+[24-Nov-2017 10:06:43 UTC] PHP  13. Bulk_Upgrader_Skin->after() /home/ubuntu/workspace/wp-content/themes/maskitto-light/inc/plugins/tgm.php:3553
+[24-Nov-2017 10:06:43 UTC] PHP  14. sprintf() /home/ubuntu/workspace/wp-admin/includes/class-bulk-upgrader-skin.php:154
+[24-Nov-2017 10:06:47 UTC] PHP Warning:  sprintf(): Too few arguments in /home/ubuntu/workspace/wp-admin/includes/class-bulk-upgrader-skin.php on line 154
+[24-Nov-2017 10:06:47 UTC] PHP Stack trace:
+[24-Nov-2017 10:06:47 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-admin/themes.php:0
+[24-Nov-2017 10:06:47 UTC] PHP   2. require_once() /home/ubuntu/workspace/wp-admin/themes.php:10
+[24-Nov-2017 10:06:47 UTC] PHP   3. do_action() /home/ubuntu/workspace/wp-admin/admin.php:222
+[24-Nov-2017 10:06:47 UTC] PHP   4. WP_Hook->do_action() /home/ubuntu/workspace/wp-includes/plugin.php:453
+[24-Nov-2017 10:06:47 UTC] PHP   5. WP_Hook->apply_filters() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:323
+[24-Nov-2017 10:06:47 UTC] PHP   6. call_user_func_array:{/home/ubuntu/workspace/wp-includes/class-wp-hook.php:298}() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[24-Nov-2017 10:06:47 UTC] PHP   7. TGM_Plugin_Activation->install_plugins_page() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[24-Nov-2017 10:06:47 UTC] PHP   8. TGMPA_List_Table->process_bulk_actions() /home/ubuntu/workspace/wp-content/themes/maskitto-light/inc/plugins/tgm.php:658
+[24-Nov-2017 10:06:47 UTC] PHP   9. TGMPA_Bulk_Installer->bulk_install() /home/ubuntu/workspace/wp-content/themes/maskitto-light/inc/plugins/tgm.php:2892
+[24-Nov-2017 10:06:47 UTC] PHP  10. TGMPA_Bulk_Installer->run() /home/ubuntu/workspace/wp-content/themes/maskitto-light/inc/plugins/tgm.php:3289
+[24-Nov-2017 10:06:47 UTC] PHP  11. WP_Upgrader->run() /home/ubuntu/workspace/wp-content/themes/maskitto-light/inc/plugins/tgm.php:3173
+[24-Nov-2017 10:06:47 UTC] PHP  12. TGMPA_Bulk_Installer_Skin->after() /home/ubuntu/workspace/wp-admin/includes/class-wp-upgrader.php:757
+[24-Nov-2017 10:06:47 UTC] PHP  13. Bulk_Upgrader_Skin->after() /home/ubuntu/workspace/wp-content/themes/maskitto-light/inc/plugins/tgm.php:3553
+[24-Nov-2017 10:06:47 UTC] PHP  14. sprintf() /home/ubuntu/workspace/wp-admin/includes/class-bulk-upgrader-skin.php:154
+[25-Nov-2017 09:58:39 UTC] PHP Warning:  call_user_func_array() expects parameter 1 to be a valid callback, function 'grunion_media_button' not found or invalid function name in /home/ubuntu/workspace/wp-includes/class-wp-hook.php on line 298
+[25-Nov-2017 09:58:39 UTC] PHP Stack trace:
+[25-Nov-2017 09:58:39 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-admin/widgets.php:0
+[25-Nov-2017 09:58:39 UTC] PHP   2. wp_list_widgets() /home/ubuntu/workspace/wp-admin/widgets.php:398
+[25-Nov-2017 09:58:39 UTC] PHP   3. call_user_func_array:{/home/ubuntu/workspace/wp-admin/includes/widgets.php:48}() /home/ubuntu/workspace/wp-admin/includes/widgets.php:48
+[25-Nov-2017 09:58:39 UTC] PHP   4. wp_widget_control() /home/ubuntu/workspace/wp-admin/includes/widgets.php:48
+[25-Nov-2017 09:58:39 UTC] PHP   5. call_user_func_array:{/home/ubuntu/workspace/wp-admin/includes/widgets.php:240}() /home/ubuntu/workspace/wp-admin/includes/widgets.php:240
+[25-Nov-2017 09:58:39 UTC] PHP   6. WP_Widget->form_callback() /home/ubuntu/workspace/wp-admin/includes/widgets.php:240
+[25-Nov-2017 09:58:39 UTC] PHP   7. WP_Widget_Black_Studio_TinyMCE->form() /home/ubuntu/workspace/wp-includes/class-wp-widget.php:532
+[25-Nov-2017 09:58:39 UTC] PHP   8. do_action() /home/ubuntu/workspace/wp-content/plugins/black-studio-tinymce-widget/includes/class-widget.php:137
+[25-Nov-2017 09:58:39 UTC] PHP   9. WP_Hook->do_action() /home/ubuntu/workspace/wp-includes/plugin.php:453
+[25-Nov-2017 09:58:39 UTC] PHP  10. WP_Hook->apply_filters() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:323
+[25-Nov-2017 09:58:39 UTC] PHP  11. call_user_func_array:{/home/ubuntu/workspace/wp-includes/class-wp-hook.php:298}() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[25-Nov-2017 09:58:39 UTC] PHP  12. Black_Studio_TinyMCE_Admin->editor() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[25-Nov-2017 09:58:39 UTC] PHP  13. wp_editor() /home/ubuntu/workspace/wp-content/plugins/black-studio-tinymce-widget/includes/class-admin.php:278
+[25-Nov-2017 09:58:39 UTC] PHP  14. _WP_Editors::editor() /home/ubuntu/workspace/wp-includes/general-template.php:3073
+[25-Nov-2017 09:58:39 UTC] PHP  15. do_action() /home/ubuntu/workspace/wp-includes/class-wp-editor.php:226
+[25-Nov-2017 09:58:39 UTC] PHP  16. WP_Hook->do_action() /home/ubuntu/workspace/wp-includes/plugin.php:453
+[25-Nov-2017 09:58:39 UTC] PHP  17. WP_Hook->apply_filters() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:323
+[25-Nov-2017 09:58:39 UTC] PHP  18. call_user_func_array:{/home/ubuntu/workspace/wp-includes/class-wp-hook.php:298}() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[25-Nov-2017 09:58:39 UTC] PHP Warning:  call_user_func_array() expects parameter 1 to be a valid callback, function 'grunion_media_button' not found or invalid function name in /home/ubuntu/workspace/wp-includes/class-wp-hook.php on line 298
+[25-Nov-2017 09:58:39 UTC] PHP Stack trace:
+[25-Nov-2017 09:58:39 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-admin/widgets.php:0
+[25-Nov-2017 09:58:39 UTC] PHP   2. require_once() /home/ubuntu/workspace/wp-admin/widgets.php:521
+[25-Nov-2017 09:58:39 UTC] PHP   3. do_action() /home/ubuntu/workspace/wp-admin/admin-footer.php:89
+[25-Nov-2017 09:58:39 UTC] PHP   4. WP_Hook->do_action() /home/ubuntu/workspace/wp-includes/plugin.php:453
+[25-Nov-2017 09:58:39 UTC] PHP   5. WP_Hook->apply_filters() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:323
+[25-Nov-2017 09:58:39 UTC] PHP   6. call_user_func_array:{/home/ubuntu/workspace/wp-includes/class-wp-hook.php:298}() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[25-Nov-2017 09:58:39 UTC] PHP   7. Black_Studio_TinyMCE_Admin->admin_print_footer_scripts() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298
+[25-Nov-2017 09:58:39 UTC] PHP   8. Black_Studio_TinyMCE_Admin->editor() /home/ubuntu/workspace/wp-content/plugins/black-studio-tinymce-widget/includes/class-admin.php:262
+[25-Nov-2017 09:58:39 UTC] PHP   9. wp_editor() /home/ubuntu/workspace/wp-content/plugins/black-studio-tinymce-widget/includes/class-admin.php:278
+[25-Nov-2017 09:58:39 UTC] PHP  10. _WP_Editors::editor() /home/ubuntu/workspace/wp-includes/general-template.php:3073
+[25-Nov-2017 09:58:39 UTC] PHP  11. do_action() /home/ubuntu/workspace/wp-includes/class-wp-editor.php:226
+[25-Nov-2017 09:58:39 UTC] PHP  12. WP_Hook->do_action() /home/ubuntu/workspace/wp-includes/plugin.php:453
+[25-Nov-2017 09:58:39 UTC] PHP  13. WP_Hook->apply_filters() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:323
+[25-Nov-2017 09:58:39 UTC] PHP  14. call_user_func_array:{/home/ubuntu/workspace/wp-includes/class-wp-hook.php:298}() /home/ubuntu/workspace/wp-includes/class-wp-hook.php:298

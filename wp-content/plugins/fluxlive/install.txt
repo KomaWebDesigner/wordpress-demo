@@ -1,0 +1,5 @@
+To install :
+
+Go to WordPress Admin and click the "Plugins" menu.
+Click "Add New" then click "Upload Plugin" 
+Unzip and Activate.

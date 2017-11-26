@@ -1,0 +1,716 @@
+
+.colorcontainer {
+    
+
+    width: 850px;
+    height: 400px;
+    background-color: rgba(0,0,0,.45);
+    /* margin-left: 30px; */
+    /* margin-top: 30px; */
+    /* padding-right: 30px; */
+    margin: 0px auto;
+    padding: 20px;
+    border-radius: 5px;
+    border: 1px solid aliceblue;
+}
+
+
+#jspick{
+  margin-right:15px;border:none;width:0px;height:0px;  
+  
+    
+}
+
+
+/* First we have to make transparent all the default elements of the range input. We use color:transparent to eliminate the default tick marks in IE. */
+
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 100%;
+  -webkit-appearance: none;
+  margin: 0px;
+  padding: 0px;
+  border: 0 none;
+  background: transparent;
+  color: transparent;
+  overflow: visible;
+}
+
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 100%;
+  -moz-appearance: none;
+  margin: 0px;
+  padding: 0px;
+  border: 0 none;
+  background: transparent;
+  color: transparent;
+  overflow: visible;
+}
+
+input[type=range] {
+  width: 100%;
+  height: 100%;
+  -webkit-appearance: none;
+  margin: 0px;
+  padding: 0px;
+  border: 0 none;
+  background: transparent;
+  color: transparent;
+  overflow: visible;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: transparent;
+  border: transparent;
+}
+
+input[type=range]:focus {
+  outline: none;
+}
+
+/* Make the thumbs the same size as your custom sliderthumb. They will not be visible but they will be draggable. */
+input[type=range]::-ms-thumb {
+  width: 40px;
+  height: 40px;
+  border-radius: 0px;
+  border: 0 none;
+  background: transparent;
+}
+
+input[type=range]::-moz-range-thumb {
+  width: 20px;
+  height: 30px;
+  border-radius: 0px;
+  border: 0 none;
+  background: transparent;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  width: 20px;
+  height: 30px;
+  border-radius: 0px;
+  border: 0 none;
+  background: transparent;
+  -webkit-appearance: none;
+}
+
+/* Eliminate the default appearance and tooltip behaviour that is peculiar to IE and Edge. */
+input[type=range]::-ms-fill-lower {
+  background: transparent;
+  border: 0 none;
+}
+
+input[type=range]::-ms-fill-upper {
+  background: transparent;
+  border: 0 none;
+}
+
+input[type=range]::-ms-tooltip {
+  display: none;
+}
+
+
+
+
+
+
+body{ 
+    
+background-color: rgba(0,0,0,.45);
+
+
+    
+}
+
+.inputmed {
+    
+    width: 100px;
+    font-size: 11px;
+    padding: 2px;
+    color: #fbfbfb;
+    background-color: rgba(90, 90, 90, 0.56);
+    border: 1px solid white;
+    padding: 3px;
+    font-weight: bolder;
+    height: 18px;
+    margin: 3px;
+    
+}
+
+.inputsmall {
+width: 52px;
+    font-size: 14px;
+    padding: 2px;
+    color: #fbfbfb;
+    background-color: rgba(39, 39, 39, 0.96);
+    border: 2px solid white;
+    padding: 2px;
+    font-weight: bolder;
+    height: 20px;
+    margin: 2px;
+}
+
+
+.inputlarge {
+    width: 150px;
+    font-size: 14px;
+    float: left;
+    padding: 0px;
+    color: #fbfbfb;
+    background-color: rgba(90, 90, 90, 0.56);
+    border: none;
+    padding: 0px;
+    font-weight: bolder;
+    min-height: 51px;
+    margin: 0px;
+    border-bottom: 1px solid rgba(229, 229, 229, 0.56);
+    outline: 1px solid rgba(35, 40, 45, 0.81);
+}
+
+
+
+.inputlarger {
+    width: 90px;
+    font-size: 14px;
+    float: left;
+    padding: 0px;
+    color: #fbfbfb;
+    background-color: rgba(90, 90, 90, 0.56);
+    border: none;
+    padding: 0px;
+    font-weight: bolder;
+    height: 90px;
+    margin: 0px;
+}
+
+/* The .slider and .slidervertical classes are for the range inputs. Set the z-index high so its on top. */
+.slider,
+.slidervertical {
+  position: absolute;
+  left: 0;
+  top: 0;
+  overflow: visible;
+  z-index: 100;
+}
+
+/* slidershell exists only to provide a positioning context for the range input and other elements.*/
+.slidershell {
+  border: 0 none;
+  position: relative;
+  left: 0;
+  top: 0;
+  overflow: visible;
+  margin:8px;
+}
+
+/* .slidertrack is the visible track on which the user drags the thumb button. */
+.slidertrack {
+  border: 2px outset #666;
+  border-radius: 4px;
+  position: absolute;
+  background: -moz-linear-gradient(left,  rgba(0, 0, 0, 0.94) 30%,rgba(0, 0, 0, 0) 100%);
+  background: -webkit-linear-gradient(left,  rgba(0, 0, 0, 0.94) 30%,rgba(0, 0, 0, 0) 100%);
+  background: linear-gradient(to right,  rgba(0, 0, 0, 0.94) 30%,rgba(0, 0, 0, 0) 100%);
+  
+}
+
+/* .sliderfill adds color (or a gradient as seen here) to the track as the user drags the thumb. */
+.sliderfill {
+  border: 2px solid #00767f;
+  border-radius: 4px;
+  position: absolute;
+  opacity: 0.2;
+  pointer-events: none;
+  background: white;
+ /* background: linear-gradient(90deg, #005555, #006699);
+  background: linear-gradient(90deg, rgba(255,0,0,0), rgba(255,0,0,1));  */
+} 
+
+.rgbr {
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ff0000+0,ff0000+100&0+0,1+100 */
+background: -moz-linear-gradient(left, rgba(255,0,0,0) 0%, rgba(255,0,0,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left, rgba(255,0,0,0) 0%,rgba(255,0,0,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right, rgba(255,0,0,0) 0%,rgba(255,0,0,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ff0000', endColorstr='#ff0000',GradientType=1 ); /* IE6-9 */
+}
+
+.rgbg {
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#00ff00+0,00ff00+100&0+0,1+100 */
+background: -moz-linear-gradient(left, rgba(0,255,0,0) 0%, rgba(0,255,0,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left, rgba(0,255,0,0) 0%,rgba(0,255,0,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right, rgba(0,255,0,0) 0%,rgba(0,255,0,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0000ff00', endColorstr='#00ff00',GradientType=1 ); /* IE6-9 */
+}
+
+.rgbb {
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#0000ff+0,0000ff+100&0+0,1+100 */
+background: -moz-linear-gradient(left, rgba(0,0,255,0) 0%, rgba(0,0,255,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left, rgba(0,0,255,0) 0%,rgba(0,0,255,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right, rgba(0,0,255,0) 0%,rgba(0,0,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000ff', endColorstr='#0000ff',GradientType=1 ); /* IE6-9 */
+}
+
+
+
+.slideopacity {
+  background:transparent;
+ background: url('../assets/newui/opacityfilledr.png');
+}
+
+/* .sliderthumb can be any css you like including an image. 
+    The dimensions must match those found in the rule for 
+    input[type=range]::-webkit-slider-thumb. */
+.sliderthumb {
+    width: 20px;
+    height: 17px;
+    background-image: url('../assets/colorbar.png');
+    background-size: 300px;
+    background-position: 210px 9px;
+    background-repeat: repeat;
+    background-color: transparent;
+    position: absolute;
+    left: 0;
+    top: 0;
+    cursor: pointer;
+    border: 0 none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    pointer-events: stroke;
+    border: 4px solid rgba(255, 255, 255, 0.4);
+    border-radius: 2px;
+    opacity: 1;
+}
+
+/* .slidervalue can be styled as you see fit */
+.slidervalue {
+  width: 25px;
+  height: 22px;
+  line-height: 30px;
+  color: #fff;
+  font-family: sans-serif;
+  font-size: 10px;
+  position: absolute;
+  left: -30px;
+  top: 0;
+  border: 0 none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  pointer-events: none;
+  background-color: gray;
+  border:2px solid rgba(0,0,0,.3);
+}
+
+input[type=range].slidervertical {
+	-webkit-appearance: slider-vertical;
+	writing-mode: bt-lr; /* IE */
+	opacity:0.01; /* needed to hide the default slider-vertical appearance */
+}
+
+
+
+.pickerswatchRGBA{
+
+    width: 220px;
+    height: 46px;
+    float: left;
+    margin: 4px;
+    background-size: 30px 30px;
+    padding: 3px;
+    box-sizing: content-box;
+    background: white;
+       float:left;
+
+    
+    
+    
+}
+
+
+.rgba-color {
+    
+    width: 180px;
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    margin: 0;
+    padding: 0px;
+    font-size: 14px;
+    height: 22px;
+    background: transparent;
+    font-weight: bolder;
+}
+
+#rgba-color{
+    background: -moz-linear-gradient(left, rgb(255, 255, 255) 0%,rgba(0, 0, 0, 0)50%,rgb(0, 0, 0) 100%);
+    background: -webkit-linear-gradient(left, rgb(255, 255, 255) 10%,rgb(134, 134, 134) 50%,rgb(14, 14, 14) 100%);
+    background: linear-gradient(to right, rgb(255, 255, 255) 10%,rgb(134, 134, 134) 50%,rgb(14, 14, 14) 100%);
+    z-index:10;
+    
+}
+
+
+
+
+
+.pickerswatchRGB{
+    width: 120px;
+    height: 36px;
+    float: left;
+    margin: 4px;
+    background-size: 30px 30px;
+    padding: 3px;
+    box-sizing: content-box;
+    background: white;
+    float: left;
+}
+
+.pickerswatchRGBinner{
+    width: 110px;
+    padding: 3px;
+    margin: 0;
+    border: none;
+    
+}
+
+.pickerswatchRGBAinner{
+    width: 200px;
+    height: 40px;
+    padding: 0px;
+    margin: 0;
+    border: none;
+    
+}
+
+
+.translay{
+      background: url('../assets/blue/opaciry.png');
+       background-size:cover;
+      
+      
+}
+
+
+
+
+
+.varmenu{
+    
+    font-size:10px;color:white;float:left;min-width:70px;margin:2px;height:40px
+
+    
+    
+}
+
+
+
+
+.transicon{
+float:left;
+width:26px;
+height:26px;
+border:none;
+background : url('assets/opac.png');
+background-size:cover;
+border-bottom:1px solid rgb(0,0,0);
+cursor:pointer;
+}
+
+
+.varswatch{
+
+width:10px;
+height:10px;
+border:none;
+border-right:1px solid rgb(0,0,0);
+border-bottom:1px solid rgb(0,0,0);
+cursor:pointer;
+margin:1px;
+}
+
+
+.varswatcha1{
+    
+width:20px;
+height:20px;
+
+border-right:1px solid rgb(0,0,0);
+border-bottom:1px solid rgb(0,0,0);
+cursor:pointer;
+ border:none;   
+}
+
+
+
+.varswatch1{
+    
+
+ width:10px;
+height:10px;
+
+border-right:1px solid rgb(0,0,0);
+border-bottom:1px solid rgb(0,0,0);
+cursor:pointer;
+ border:none;   
+}
+
+
+
+.varswatch7{
+ float:left;
+ width:16px;
+height:16px;
+border:none;
+
+cursor:pointer;
+
+
+}
+
+.varswatch2{
+ float:left;
+ width:26px;
+height:26px;
+border:none;
+
+cursor:pointer;
+
+
+}
+
+
+
+.varswatch2{
+ float:left;
+ width:26px;
+height:26px;
+border:none;
+
+cursor:pointer;
+
+
+}
+
+
+.varswatch3{
+
+ width:10px;
+height:10px;
+border:none;
+border-right:1px solid rgb(0,0,0);
+border-bottom:1px solid rgb(0,0,0);
+cursor:pointer;
+ border:none;  
+    
+}
+
+.varswatch4{
+
+ width:10px;
+height:10px;
+border:none;
+border-right:1px solid rgb(0,0,0);
+border-bottom:1px solid rgb(0,0,0);
+cursor:pointer;
+ border:none;  
+}
+
+
+.varswatch5{
+
+ width:10px;
+height:10px;
+border:none;
+border-right:1px solid rgb(0,0,0);
+border-bottom:1px solid rgb(0,0,0);
+cursor:pointer;
+ border:none;  
+    
+}
+
+.varswatch6{
+
+ width:10px;
+height:10px;
+border:none;
+border-right:1px solid rgba(0,0,0);
+border-bottom:1px solid rgba(0,0,0);
+cursor:pointer;
+ border:none;  
+}
+
+
+
+
+
+.Iswatch{
+    
+margin-bottom:3px; 
+    
+}
+
+.translay2{
+
+    top: -17px;
+    border-top-width: 20px;
+    border-top-style: solid;
+    border-right-width: 20px;
+    border-right-style: solid;
+    width: 200px;
+    margin: 2px;
+    padding: 0px;
+    
+
+    
+     background: url('../assets/blue/opaciry.png') ;
+    background-size:cover;
+
+      
+}
+
+.FlexBox{
+
+ Display:flex;
+ font-size:10px;color:white;clear:both;max-width:100%;padding:4px;margin:4px
+
+      
+}
+
+
+.menuselect{
+    width: 300px;
+    font-weight: bold;
+    color: white;
+    font-size: 12px;
+    float: left;
+    font-family: sans-serif;
+}
+
+.check{
+    font-size: 11px;
+    font-weight: bold;
+    font-family: sans-serif;
+    height: 21px;
+    width: 95px;
+    color: white;
+    margin: 1px;
+    border: 1px solid black;
+    border-top: 1px solid #496684;
+    border: 1px solid #337ab7;
+    border-top: 1px solid #8ebae2;
+    background-color: rgba(68, 134, 196, 0.68);
+    border-radius: 3px;
+    float: left;
+    cursor:pointer;
+    
+    
+    
+}
+
+
+.selected{
+
+    background-color: rgba(150, 150, 20, 0.68);
+    
+}
+
+
+.checkbig2{
+    font-size: 13px;
+    font-weight: bold;
+    font-family: sans-serif;
+    height: 30px;
+    width: 120px;
+    color: #ffffff;
+    margin: 3px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #337ab7;
+    border-top: 1px solid #8ebae2;
+    background-color: rgba(100, 111, 107, 0.61);
+    border-radius: 3px;
+    margin-right: 10px;
+    float: right;
+    
+    
+}
+
+
+.checkbig{
+    float: left;
+    font-size: 13px;
+    font-weight: bold;
+    font-family: sans-serif;
+    margin-bottom: 15px;
+    height: 30px;
+    width: 120px;
+    color: #ffffff;
+    margin: 1px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #337ab7;
+    border-top: 1px solid #8ebae2;
+    background-color: rgba(68, 134, 196, 0.68);
+    border-radius: 3px;
+}
+
+.inputlong{
+    width: 150px;
+    height: 34px;
+    border: 0px;
+    margin: 0px;
+    border-bottom: 1px solid rgb(35, 40, 45);
+    outline: 1px solid rgba(255, 255, 255, 0.77);
+}
+
+
+.inputlong2{
+width: 100px;
+    height: 34px;
+    border: 0px;
+    margin: 0px;
+    border-bottom: 1px solid rgb(35, 40, 45);
+    outline: 1px solid rgba(255, 255, 255, 0.77);
+    background-size: 78px 50px;
+    background-position-x: 22px;
+    background-repeat: no-repeat;
+    float: left;
+}
+
+.FL{float:left;
+ 
+    
+    
+    
+}
+
+.inputlong3{
+width: 78px;
+    height: 34px;
+    border: 0px;
+    margin: 0px;
+    border-bottom: 1px solid rgb(35, 40, 45);
+    outline: 1px solid rgba(255, 255, 255, 0.77);
+    float: left;
+}
+
+.selected{
+    font-size: 11px;
+    font-weight: bold;
+    font-family: sans-serif;
+    height: 21px;
+    width: 95px;
+    color: black;
+    border: 1px solid black;
+    border-top: 1px solid #ffffff;
+    border: 1px solid #c5c5c5;
+    border-top: 1px solid #ffffff;
+    background-color: rgba(255, 234, 97, 0.83);
+    border-radius: 3px;
+    float: left;
+    cursor: pointer;
+    margin: 1px;
+}

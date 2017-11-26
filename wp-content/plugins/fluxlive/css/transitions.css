@@ -1,0 +1,103 @@
+.FluxGrow {
+    -ms-transform: scale(0);
+/* IE 9 */
+    -webkit-transform: scale(0);
+/* Safari */
+    transform: scale(0);
+}
+
+.FluxGrowfull {
+    -ms-transform: scale(1);
+/* IE 9 */
+    -webkit-transform: scale(1);
+/* Safari */
+    transform: scale(1);
+}
+
+.FluxParallex {
+    position: absolute;
+    transition: all 1ms;
+    -webkit-transition: all 1ms;
+/** Chrome & Safari **/
+    -moz-transition: all 1ms;
+/** Firefox **/
+    -o-transition: all 1ms;
+/** Opera **/
+}
+
+.FluxSpeed500 {
+    position: absolute;
+    transition: all 500ms ease-in-out;
+    -webkit-transition: all 500ms ease-in-out;
+/** Chrome & Safari **/
+    -moz-transition: all 500ms ease-in-out;
+/** Firefox **/
+    -o-transition: all 500ms ease-in-out;
+/** Opera **/
+}
+
+.FluxSpeed1 {
+    position: absolute;
+    transition: all 1s ease-in-out;
+    -webkit-transition: all 1s ease-in-out;
+/** Chrome & Safari **/
+    -moz-transition: all 1s ease-in-out;
+/** Firefox **/
+    -o-transition: all 1s ease-in-out;
+/** Opera **/
+}
+
+.FluxSpeed15 {
+    position: absolute;
+    transition: all 1.5s ease-in-out;
+    -webkit-transition: all 1.5s ease-in-out;
+/** Chrome & Safari **/
+    -moz-transition: all 1.5s ease-in-out;
+/** Firefox **/
+    -o-transition: all 1.5s ease-in-out;
+/** Opera **/
+}
+
+.FluxSpeed2 {
+    position: absolute;
+    transition: all 2s ease-in-out;
+    -webkit-transition: all 2s ease-in-out;
+/** Chrome & Safari **/
+    -moz-transition: all 2s ease-in-out;
+/** Firefox **/
+    -o-transition: all 2s ease-in-out;
+/** Opera **/
+}
+
+.FluxSpeed25 {
+    position: absolute;
+    transition: all 2.5s ease-in-out;
+    -webkit-transition: all 2.5s ease-in-out;
+/** Chrome & Safari **/
+    -moz-transition: all 2.5s ease-in-out;
+/** Firefox **/
+    -o-transition: all 2.5s ease-in-out;
+/** Opera **/
+}
+
+.FluxSpeed3 {
+    position: absolute;
+    transition: all 3s ease-in-out;
+    -webkit-transition: all 3s ease-in-out;
+/** Chrome & Safari **/
+    -moz-transition: all 3s ease-in-out;
+/** Firefox **/
+    -o-transition: all 3s ease-in-out;
+/** Opera **/
+}
+
+.FluxSpeed4 {
+    position: absolute;
+    transition: all 4s ease-in-out;
+    -webkit-transition: all 4s ease-in-out;
+/** Chrome & Safari **/
+    -moz-transition: all 4s ease-in-out;
+/** Firefox **/
+    -o-transition: all 4s ease-in-out;
+/** Opera **/
+}

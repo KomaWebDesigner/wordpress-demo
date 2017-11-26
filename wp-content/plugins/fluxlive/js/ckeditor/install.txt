@@ -1,0 +1,3 @@
+To install new version or modified version of CKEditor, just unzip the CKEditor into the JS folder.
+File path should be js/ckeditor/
+

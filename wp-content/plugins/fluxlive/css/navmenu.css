@@ -1,0 +1,174 @@
+#navfluxmenu {
+    width: 100%;
+    background:none;
+    background-color:#3a3a3a;;
+    text-align:left;
+    z-index: 12000;
+    position:relative;
+
+}
+
+#navfluxmenu ul {
+     background:none;
+    font-size: 12px;
+    font-weight: 700;
+    color: #fff;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+}
+
+#navfluxmenu li {
+   background:none;
+    display: inline-block;
+    background-color: #3a3a3a;
+    zoom: 1;
+    position: relative;
+    z-index: 554542;
+}
+
+#navfluxmenu a {
+    background:none;
+    text-decoration: none;
+    display: inline-block;
+    padding: 6px;
+    padding-left:15px;
+    padding-right:15px;
+    color: #f0f0f0;
+    font-size:14px;
+    font-weight:bold;
+    font-family: sans-serif;
+    text-align:left;
+}
+
+#navfluxmenu a:hover {
+    background:none;
+    color: #000;
+}
+
+#navfluxmenu ul ul {
+    background:none;
+    display: none; 
+    margin: 0;
+    position: absolute;
+}
+
+#navfluxmenu ul ul a {
+    background:none;
+    width: 150px;
+}
+
+#navfluxmenu ul ul ul {
+    background:none;
+    left: 100%;
+    top: 0;
+    float: left;
+}
+
+#navfluxmenu li :hover > a,#navfluxmenu ul ul :hover > a,#navfluxmenu a:focus {
+    background:none;
+   color: #fff;
+    background-color: #008b8b;
+}
+
+#navfluxmenu ul li:hover > ul {
+     background:none;
+    display: block;
+}
+
+#navfluxmenu ul ul li {
+    background:none;
+    background-color: #3a3a3a;
+    float: left;
+    position: relative;
+}
+
+ul:before {
+    content: '';
+    display: block;
+}
+
+ul:after {
+    content: '';
+    display: block;
+}
+
+#navfluxmenubutton button {
+     background:none;
+    display: none;
+}
+
+#navfluxmenubutton {
+       background:none;
+       display: none;
+}
+
+
+#navfluxmenu {
+
+        display: block;
+ }
+
+@media (max-width: 643px) {
+    #navfluxmenubutton {
+            background:none;
+        display: block;
+        background-color: #3a3a3a;;
+        width: 100%;
+        font-size: 12px;
+        font-weight: 700;
+        color: #fff;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        border: none;
+        outline: none;
+        height: 20px;
+    }
+
+    #navfluxmenu {
+        background:none;
+        display: none;
+    }
+
+    #navfluxmenu ul ul li {
+        position: static;
+         background:none;
+        background-color: #3a3a3a;
+        float: none;
+    }
+
+    #navfluxmenu li {
+        background:none;
+        background-color: #3a3a3a;
+        display: block;
+        float:none;
+    }
+
+    #navfluxmenu ul a {
+        width: 100%;
+    }
+
+    #navfluxmenu ul ul a {
+        width: 200px;
+    }
+       #navfluxmenu ul ul il  {
+        position: relative;
+         background:none;
+        background-color: #3a3a3a;
+        float: none;
+    }
+    #navfluxmenu ul ul  {
+        position: relative;
+        float: none;
+    }
+ 
+    #navfluxmenu ul ul ul {
+        position: relative;
+        float: none;
+        top:0;
+        left:0%;
+        
+    }
+}

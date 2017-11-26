@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link id="Sonsie+One" href="http://fonts.googleapis.com/css?family=Sonsie+One" data-pnefonts="Sonsie One" rel="stylesheet" type="text/css" data-fluxfontscat="display">
+<link  href="css/entry.css" data-pnefonts="Sonsie One" rel="stylesheet" type="text/css">
+
+
+
+
+<meta charset="UTF-8">
+
+<style>
+
+
+ @keyframes InOut {
+  0% {
+
+}
+25% {
+opacity:.6;
+height:10%;
+ -webkit-transform: rotate(90deg); transform:rotate(90deg);
+}
+50% {
+
+ -webkit-transform: rotate(180deg); transform:rotate(180deg);
+ height:30%;
+}
+75% {
+
+ -webkit-transform: rotate(270deg); transform:rotate(270deg);
+}
+
+100% {
+opacity:.3;
+height:80%;
+ -webkit-transform: rotate(360deg); transform:rotate(360deg);
+}
+}
+
+    
+
+ @keyframes InOut3 {
+  0% {
+  opacity:.4;
+}
+25% {
+    height:40%;
+opacity:.2;
+ -webkit-transform: rotate(90deg); transform:rotate(90deg);
+}
+50% {
+opacity:.4;
+ -webkit-transform: rotate(-180deg); transform:rotate(-180deg);
+}
+75% {
+opacity:.6;
+height:30%;
+ -webkit-transform: rotate(270deg); transform:rotate(270deg);
+}
+
+100% {
+opacity:.8;
+ -webkit-transform: rotate(360deg); transform:rotate(360deg);
+}
+}
+
+
+ @keyframes InOut2 {
+  0% {
+  opacity:0;
+}
+25% {
+opacity:.2;
+height:0%;
+ -webkit-transform: rotate(90deg); transform:rotate(90deg);
+}
+50% {
+
+}
+75% {
+
+
+ -webkit-transform: rotate(-270deg); transform:rotate(-270deg);
+}
+
+100% {
+    height:45%;
+opacity:.8;
+ -webkit-transform: rotate(360deg); transform:rotate(360deg);
+}
+}
+
+
+
+
+#loaderimage img.one {
+animation-name: InOut;
+animation-timing-function: ease-in;
+animation-iteration-count: 3;
+animation-duration: 8s;
+animation-direction: alternate;
+height:50%;
+}
+    
+ #loaderimage img.two {
+animation-name: InOut2;
+animation-timing-function: ease-out;
+animation-iteration-count:1;
+animation-duration: 18s;
+animation-direction: alternate;
+height:30%;
+}
+       
+        #loaderimage img.three {
+animation-name: InOut3;
+animation-timing-function: linear;
+animation-iteration-count: 2;
+animation-duration: 16s;
+height:40%;
+
+}
+      
+    
+
+
+#loaderimage img {
+
+  -webkit-transition: all .5s ease-in-out;
+  -moz-transition: all .5s ease-in-out;
+  -o-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+}
+
+    
+</style>
+
+
+
+<script>
+
+
+
+function getParameterByName(get) {
+
+      url = window.location.href;
+ 
+    get = get.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + get + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+
+     console.log(!results[2])
+
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
+
+
+
+
+
+
+function Loadeditor () {
+document.getElementById('EntryFrame').style.width=screen.width+'px';
+document.getElementById('EntryFrame').src='editorlayer.html';
+
+
+
+
+CanvasPage = getParameterByName('pnepageurl')
+ExitPage=CanvasPage;
+  if (CanvasPage.match('\\?')){
+  CanvasPage=CanvasPage +  '&PNENoWPToolbars=1'
+} else{
+CanvasPage=CanvasPage +  '?PNENoWPToolbars=1'
+}
+
+if ( window.location.href.match('https')){
+alert('You are loading over Secure HTTPS, full version supports SSL.')
+return;
+
+}
+
+
+
+
+
+
+document.getElementById('FluxReturnUrl').value=CanvasPage;
+document.getElementById('bodyentry').style.width=screen.width+'px';
+EditorLevel=document.getElementById('EntryFrame').contentWindow;;
+}
+ 
+ 
+var helptimer=setTimeout(function(){ document.getElementById('Help').style.backgroundColor='grey';document.getElementById('Help').style.color='black'; }, 3000); 
+function Help(a){
+document.getElementById('Help').innerHTML=a
+document.getElementById('Help').style.backgroundColor='white';
+document.getElementById('Help').style.color='red';
+ clearTimeout(helptimer);
+helptimer=setTimeout(function(){ document.getElementById('Help').style.backgroundColor='grey';document.getElementById('Help').style.color='black'; }, 3000);
+}
+
+
+if (navigator.appName == 'Microsoft Internet Explorer' ||  !!(navigator.userAgent.match(/Trident/) || navigator.userAgent.match(/rv 11/)) )
+{
+  alert("This Version Of Microsoft Internet Explorer Is Not Supported. Browser Requirements: Microsoft Edge, Modern Version Of FireFox Or Chrome");
+}
+
+
+function SetErrorData(){
+document.getElementById('NoPage').innerHTML=document.getElementById('NoPage').innerHTML + '<br><br>Canvas Page:<br> '+ CanvasPage
+}
+
+</script>
+
+<title>3D Drag And Drop HTML Editor Online WYSIWYG Visual Editor, Free HTML Editor Online Web Page Builder, Web Based WYSIWYG Editor</title>
+</head>
+<body id="bodyentry" >
+<div id="Information"  style="display:none;position:fixed;top:20px;left:10px;width:250px;padding:10px;text-align:justify;opacity:1;z-index:10000">
+<img src="assets/blue/information.png" >
+ 
+<p>
+You should not edit this page until you have built your "Full Screen" version. The editor will resize, format and place duplicate objects for you.
+ </p><p>
+After you finish the full size version disconnect the "Mobile" page from your "Full Page" and arrange objects on your mobile version as you desire.
+ </p><p>
+The editor will then no longer change both pages and all edits need to be completed on the individual pages.
+  </p>
+  <span style="color:white"> Disconnect Mobile From Full Width Page.<br></span>
+  <div style="text-align:center;cursor:pointer;padding:2px" onclick="EditorLevel.PNETOOLS.UnlockMobile()">
+
+<img src="assets/blue/unlock.png" style="cursor:pointer;padding:2px" onclick="EditorLevel.PNETOOLS.UnlockMobile()"></div>
+<br><br>
+Back To Full Screen.<br>
+
+<div style="text-align:center;cursor:pointer;padding:2px" onclick="EditorLevel.PNETOOLS.SwithToTemplateCanvas('Full');document.getElementById('Information').style.display='none';document.getElementById('StopEditing').style.display='none'">
+<img src="assets/desktop.png" style="max-height:32px;padding:2px"  onclick="EditorLevel.PNETOOLS.SwithToTemplateCanvas('Full');document.getElementById('Information').style.display='none';document.getElementById('StopEditing').style.display='none'" onmouseover="Help('Switch to Full screen view.')" >
+</div>
+</div>
+
+<div  class="Loaderg"  id ="ImageLoading" style="position: absolute;margin: auto;top: 35px;left: 0;right: 0;bottom: 0;z-index:5000;text-align:center;background-color:white;opacity:.9;display:none">
+<div  style="position:fixed;top:60px;left:10px;width:350px;padding:10px;text-align:justify;opacity:1;z-index:10000"> <img src="assets/loadingsmall.gif">
+<h3>
+Loading.
+</h3>
+</div>
+</div>
+
+<div id="NoPage" style="display:none;position:fixed;top:20px;left:10px;width:350px;padding:10px;text-align:justify;opacity:1;z-index:10000"> <img src="assets/blue/highpriority.png">
+<h3>
+This is not a Flux Live page or you are not logged in to WordPress.   <a id="backtoadmin" href="" style="color:white;display:none">Back to admin.</a><br><br> 
+If you continue to receive this error contact <a href="mailto:contact@plugnedit.com"> support </a> and include error information.<br>
+</h3>
+</div>
+<div class="Loaderg"  id ="loaderimage" style="">
+
+
+
+
+
+
+  <img class="three"  src="assets/spinner.svg" style="position: absolute;margin: auto;top: 200px;left: 200px;right: 200px;bottom: 200px;z-index:4;">
+
+  <img class="two"  src="assets/spinner.svg" style="position: absolute;margin: auto;top: 200px;left: 200px;right: 200px;bottom: 200px;z-index:2;">
+  
+  <img class="one"  src="assets/spinner.svg" style="position: absolute;margin: auto;top: 200px;left: 200px;right: 200px;bottom: 200px;z-index:3;">
+  
+
+ <progress id="progressbara" value="1" max= "10" style="position: absolute;margin: auto;top: 200px;left: 100px;right: 100px;bottom: 200px;z-index:1;" ></progress>
+<div class="headertext">
+
+Simply Symphony Page Builder!
+
+</div>
+
+<div class="StatusBox" >
+
+
+<span class="edition title"> FLUX LIVE! ENTREPID </span><span class="edition"> Edition.</span>
+
+<div id="statusText"  class="StatusBar">Initializing... </div>
+<div  class="loaderbars" style="display:flex">
+
+<div id="status1" class="bluegrad" ></div>
+<div id="status2" class="bluegrad" ></div>
+<div id="status3" class="bluegrad" style=""></div>
+<div id="status4" class="bluegrad" style=""></div>
+<div id="status5" class="bluegrad" style=""></div>
+<div id="status6" class="bluegrad" style=""></div>
+<div id="status7" class="bluegrad" style=""></div>
+<div id="status8" class="bluegrad" style=""></div>
+<div id="status9" class="bluegrad" style=""></div>
+   
+<div id="status10" class="bluegrad" ></div>
+<div id="status11" class="bluegrad" ></div>
+<div id="status12" class="bluegrad" style=""></div>
+
+</div>
+  </div> 
+</div>
+
+
+
+
+
+<div id="StopEditing" style="height:100vh;width:100vw;top:0px;left:0px;background-color:black;position:absolute;z-index:1000;opacity:.23">
+</div>
+<div style="height:100vh;border:none;border-radius:0px;background:none">
+<div id="aboutflux" style="top:25px;left:0px;position:fixed;height:25px;width:100hw;padding:3px;padding-left:30px;margin:0px;z-index:1000;display:none;font-size:16px;">
+<img alt="Clear Shadow" onclick="this.parentNode.style.display='none';" src="assets/blue/close.png" style="height: 20px;margin-right: 10px;margin-top: 4px;" title="Close" class="">      Flux Live! Intrepid Edition Copyright 2011-2017 - Icons by <a href="http://aha-soft.com" >aha soft</a> <a href="http://icons8.com">Icons 8</a>
+</div>
+
+<div class="tools" style="">
+    <div class="helpi" id ="Help" style="width:24%;float:left" >START WITH TOOLS PALETTE AND INSERT IMAGE OR HTML BOX</div>  
+   <div class="helpi styled-select" id ="topbar" style="width:76%;float:left" ></div>
+
+
+</div>
+
+
+<div class="editormenucontain">
+    
+   
+
+<div class="menui CKmatch">
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbutton">File</a>
+    <div class="dropdownc">
+<a href="javascript:void(0)" class="menuc" onclick="document.getElementById('FluxType').value='publish';document.getElementById('SubmitHTML').target='';EditorLevel.PNETOOLS.SavePage()"> Publish </a>
+<a href="javascript:void(0)" class="menuc" onclick="document.getElementById('FluxType').value='draft';document.getElementById('SubmitHTML').target='';EditorLevel.PNETOOLS.SavePage()">Save As Draft </a>
+
+<a href="javascript:void(0)" class="menuc" onclick="document.getElementById('FluxType').value='save';document.getElementById('SubmitHTML').target='';EditorLevel.PNETOOLS.SavePage()" style="" type="button" value=" Save & Preview ! "> Save & Preview </a>
+
+
+
+<a href="javascript:void(0)" class="menuc" onclick="document.getElementById('FluxAdmin').value='true';document.getElementById('FluxType').value='save';document.getElementById('FluxReturnUrl').value=EditorLevel.PlugNedit.CanvasWindow.getElementById('PNEFluxAdminurl').value;document.getElementById('SubmitHTML').target='';EditorLevel.PNETOOLS.SavePage()"> Save & Admin </a>
+
+
+<a href="javascript:void(0)" class="menuc" onclick="window.location.href  = ExitPage.replace('PNENoWPToolbars','exit')"> Exit Without Saving </a>
+
+
+<a href="javascript:void(0)" class="menuc"   onclick="document.getElementById('FluxType').value='trash';document.getElementById('SubmitHTML').target='';document.getElementById('SubmitHTML').submit()"> Trash Post / Page </a>
+
+<a href="javascript:void(0)" class="menuc pnedisabled "> Save As Template </a>
+<a href="javascript:void(0)" class="menuc pnedisabled "> Save Layer As Code Snippet </a>
+<a href="javascript:void(0)" class="menuc pnedisabled "> Save AS PDF</a>
+<a href="javascript:void(0)" class="menuc pnedisabled "> Save As Image</a>
+
+<a href="javascript:void(0)" class="menuc pnedisabled "> Export Editor HTML As File </a>
+<a href="javascript:void(0)" class="menuc pnedisabled "> Export Page HTML As File </a>
+
+<a href="javascript:void(0)" class="menuc pnedisabled "> Preview In Editor </a>
+<a href="javascript:void(0)" class="menuc"  onclick="EditorLevel.PlugNedit.SideBar('3')"> Editor Properties </a>
+
+<a href="javascript:void(0)" class="menuc" onclick="EditorLevel.PlugNedit.SideBar('3')"> Page Properties </a>
+<a href="javascript:void(0)" class="menuc pnedisabled"> Special Effects Template Options </a>
+<a href="javascript:void(0)" class="menuc pnedisabled"> Import Template </a>
+</div>
+</li>
+
+
+
+
+
+<li class="dropdown">
+<a href="javascript:void(0)" class="dropbutton">Edit</a>
+<div class="dropdownc">
+<a href="javascript:void(0)" class="menuc dividername"> -- Objects -- </a>
+
+<a href="javascript:void(0)" class="menuc"  onclick="EditorLevel.PlugNedit.GetTitleobject('Cut')"> Cut </a>
+<a href="javascript:void(0)" class="menuc"  onclick="EditorLevel.PlugNedit.GetTitleobject('Copy')"> Copy </a>
+<a href="javascript:void(0)" class="menuc pnedisabled"> Select All </a>
+<a href="javascript:void(0)" class="menuc" onclick="EditorLevel.PlugNedit.GetTitleobject('Paste')"> Paste </a>
+<a href="javascript:void(0)" class="menuc" onclick="EditorLevel.PlugNedit.GetTitleobject('Paste as plain text')"> Paste  as plain text</a>
+
+
+
+
+
+
+
+<a href="javascript:void(0)" class="menuc" onclick="EditorLevel.PlugNedit.GetTitleobject('Paste as Word')"> Paste as Word</a>
+
+<a href="javascript:void(0)" class="menuc dividername">-- Layers --</a>
+<a href="javascript:void(0)" class="menuc menuc pnedisabled comingsoon" onclick="EditorLevel.PlugNedit.GetTitleobject('Source')" > Edit Source </a>
+<a href="javascript:void(0)" class="menuc pnedisabled" > Select All Layers </a>
+<a href="javascript:void(0)" class="menuc pnedisabled"> Invert Selection </a>
+<a href="javascript:void(0)" class="menuc pnedisabled comingsoon" oncick="EditorLevel.PlugNedit.ObjectFullWidth()"> Layer To Full Width </a>
+
+<a href="javascript:void(0)" class="menuc dividername">-- Page --</a>
+
+<a href="javascript:void(0)" class="menuc" onclick="EditorLevel.PNETOOLS.UndoIt(-1)"> Undo </a>
+<a href="javascript:void(0)" class="menuc" onclick="EditorLevel.PNETOOLS.UndoIt(1)" > Redo </a>
+
+
+
+</div> 
+</li>
+
+
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbutton">Images</a>
+    <div class="dropdownc">
+
+<a href="javascript:void(0)" class="menuc"  onclick="EditorLevel.PlugNedit.SideBar('5')"> Show Image Palette </a>
+<a href="javascript:void(0)" class="menu c" onclick="EditorLevel.PlugNedit.RE('pneimageframewrap').style.display='block';EditorLevel.PlugNedit.RE('pneimageframewrap').style.visibility='visible';EditorLevel.PlugNedit.RE('pneimageframewrap').style.zIndex='7777';if (!EditorLevel.PlugNedit.RE('pneimageframe').src.match('gallery')){EditorLevel.PlugNedit.RE('pneimageframe').style.display='block';EditorLevel.PlugNedit.RE('pneimageframe').src=EditorLevel.PlugNedit.CanvasWindow.getElementById('PNEFluxGallerURL').value;};EditorLevel.PlugNedit.RE('pneimageframe').style.display='block';EditorLevel.PlugNedit.RE('pneimageframe').style.zIndex='7777';EditorLevel.PlugNedit.RE('pneimageframe').style.visibility='visible'" onmouseover="Help('Insert Image.')"> New Image Layer </a>
+<a href="javascript:void(0)" class="menuc pnedisabled"> Load image From URL </a>
+
+<a href="javascript:void(0)" class="menuc pnedisabled comingsoon" onclick="EditorLevel.PlugNedit.ObjectFullWidth()"> Convert To Full Width </a>
+
+<a href="javascript:void(0)" class="menuc"  onclick="EditorLevel.PlugNedit.RE('pneimageframewrap').style.display='block';EditorLevel.PlugNedit.RE('pneimageframewrap').style.visibility='visible';EditorLevel.PlugNedit.RE('pneimageframewrap').style.zIndex='7777';if (!EditorLevel.PlugNedit.RE('pneimageframe').src.match('gallery')){EditorLevel.PlugNedit.RE('pneimageframe').style.display='block';EditorLevel.PlugNedit.RE('pneimageframe').src=EditorLevel.PlugNedit.CanvasWindow.getElementById('PNEFluxGallerURL').value;};EditorLevel.PlugNedit.RE('pneimageframe').style.display='block';EditorLevel.PlugNedit.RE('pneimageframe').style.zIndex='7777';EditorLevel.PlugNedit.RE('pneimageframe').style.visibility='visible'" onmouseover="Help('Insert Image.')"> Upload Image </a>
+<a href="javascript:void(0)" class="menuc pnedisabled"> Rotate Counter Clockwise 1 &deg;</a>
+<a href="javascript:void(0)" class="menuc pnedisabled"> Rotate Clockwise 10 &deg;</a>
+<a href="javascript:void(0)" class="menuc pnedisabled"> Rotate Clockwise 1 &deg;</a>
+<a href="javascript:void(0)" class="menuc pnedisabled"> Rotate Counter Clockwise</a>
+<a href="javascript:void(0)" class="menuc pnedisabled"> Rotate Counter Clockwise </a>
+<a href="javascript:void(0)" class="menuc pnedisabled"> Flip horizontal </a>
+<a href="javascript:void(0)" class="menuc pnedisabled"> Flip Vertical </a>
+<a href="javascript:void(0)" class="menuc pnedisabled"> Set Image As Background </a>
+<a href="javascript:void(0)" class="menuc pnedisabled"> Color Picker Border Color </a>
+<a href="javascript:void(0)" class="menuc pnedisabled"> Select Background Color </a>
+<a href="javascript:void(0)" class="menuc pnedisabled"> Select All Colors</a>
+<a href="javascript:void(0)" class="menuc pnedisabled"> Add Inline Style </a>
+<a href="javascript:void(0)" class="menuc pnedisabled"> Duplicate Style </a>
+<a href="javascript:void(0)" class="menuc pnedisabled"> Apply Style </a>
+</div> </li>
+
+
+
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbutton">Insert</a>
+    <div class="dropdownc">
+<a href="javascript:void(0)" class="menuc dividername">Insert Objects Into HTML Box</a>
+<a href="javascript:void(0)" class="menuck pnedisabled" onclick="EditorLevel.PlugNedit.GetTitleobject('Create Div Container')"> Div </a>
+<a href="javascript:void(0)" class="menuck" onclick="EditorLevel.PlugNedit.GetTitleobject('Image')"> Image </a>
+<a href="javascript:void(0)" class="menuck" onclick="EditorLevel.PlugNedit.GetTitleobject('Insert Horizontal Line')"> Horizontal Rule </a>
+<a href="javascript:void(0)" class="menuck" onclick="EditorLevel.PlugNedit.GetTitleobject('Table')">Insert Table </a>
+<a href="javascript:void(0)" class="menuck" onclick="EditorLevel.PlugNedit.GetTitleobject('Simple Buttons')" > Button </a>
+<a href="javascript:void(0)" class="menuc pnedisabled"> Flip Horizontal </a>
+<a href="javascript:void(0)" class="menuc pnedisabled"> Flip Vertical </a>
+<a href="javascript:void(0)" class="menuc pnedisabled"> Rotate Counter Clockwise 1 &deg;  </a>
+<a href="javascript:void(0)" class="menuc pnedisabled"> Rotate Clockwise 10 &deg;  </a>
+<a href="javascript:void(0)" class="menuc pnedisabled"> Rotate Clockwise 1 &deg;  </a>
+<a href="javascript:void(0)" class="menuc pnedisabled"> Rotate Counter Clockwise 10 &deg; </a>
+<a href="javascript:void(0)" class="menuc pnedisabled"> Rotate Counter Clockwise 1 &deg;  </a>
+
+</div> </li>
+
+
+
+  <li class="dropdown nodisplay">
+    <a href="javascript:void(0)" class="dropbutton nodisplay">Objects</a>
+    <div class="dropdownc">
+
+<a href="javascript:void(0)" class="menuc pnedisabled"> Rotate Counter Clockwise 1 &deg;  </a>
+<a href="javascript:void(0)" class="menuc pnedisabled"> Rotate Clockwise 10 &deg;  </a>
+<a href="javascript:void(0)" class="menuc pnedisabled"> Rotate Clockwise 1 &deg;  </a>
+<a href="javascript:void(0)" class="menuc pnedisabled"> Rotate Counter Clockwise 10 &deg; </a>
+<a href="javascript:void(0)" class="menuc pnedisabled"> Rotate Counter Clockwise 1 &deg;  </a>
+<a href="javascript:void(0)" class="menuc pnedisabled"> Flip horizontal </a>
+<a href="javascript:void(0)" class="menuc pnedisabled"> Flip Vertical </a>
+<a href="javascript:void(0)" class="menuc pnedisabled"> Select Background Color </a>
+<a href="javascript:void(0)" class="menuc pnedisabled"> Select Border Color </a>
+<a href="javascript:void(0)" class="menuc pnedisabled"> Select All Colors</a>
+<a href="javascript:void(0)" class="menuc pnedisabled"> Select All </a>
+<a href="javascript:void(0)" class="menuc pnedisabled"> Add Inline Style </a>
+<a href="javascript:void(0)" class="menuc pnedisabled"> Duplicate Style </a>
+<a href="javascript:void(0)" class="menuc pnedisabled"> Apply Style </a>
+</div> </li>
+
+
+
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbutton">Layers</a>
+    <div class="dropdownc">
+<a href="javascript:void(0)" class="menuc"  onclick="EditorLevel.PlugNedit.SideBar('4')"> Layers Palette  </a>
+<a href="javascript:void(0)" class="menuc"  onclick="EditorLevel.PlugNedit.RE('pnenewhtmlwrap').style.display='block';EditorLevel.PlugNedit.RE('pnenewhtml').style.display='';" > New HTML Layer  </a>
+
+<a href="javascript:void(0)" class="menuc"  onclick="EditorLevel.PlugNedit.NewHTMLLayer(undefined, undefined, undefined, true);"> New Headline Layer </a>
+
+<a href="javascript:void(0)" class="menuc" onclick="EditorLevel.PNETOOLS.CloneLayers()"> Duplicate Layer </a>
+
+<a href="javascript:void(0)" class="menuc"  onclick="EditorLevel.PNETOOLS.DeleteLayers()"> Delete Layer </a>
+<a href="javascript:void(0)" class="menuc pnedisabled"> Apply Layer Style </a>
+<a href="javascript:void(0)" class="menuc pnedisabled"> Delete Layer Style </a>
+<a href="javascript:void(0)" class="menuc pnedisabled"> Copy Layer Style </a>
+
+
+
+<a href="javascript:void(0)" class="menuc" onclick="EditorLevel.PNETOOLS.LayerAdjust(1,undefined,undefined)"> Bring Layer Forward One </a>
+<a href="javascript:void(0)" class="menuc" onclick="EditorLevel.PNETOOLS.LayerAdjust(0,undefined,undefined)"> Send Layer Back One </a>
+<a href="javascript:void(0)" class="menuc" onclick="EditorLevel.PNETOOLS.LayerAdjust(undefined,undefined,'Front')"> Bring Layer To Front </a>
+<a href="javascript:void(0)" class="menuc" onclick="EditorLevel.PNETOOLS.LayerAdjust(undefined,undefined,'Back')"> Send Layer To Back </a>
+
+<a href="javascript:void(0)" class="menuc pnedisabled"> Link Text Layers (Overflow) </a>
+<a href="javascript:void(0)" class="menuc pnedisabled"> Open Image URL As New Layer </a>
+<a href="javascript:void(0)" class="menuc pnedisabled comingsoon"> Layer Styles </a>
+<a href="javascript:void(0)" class="menuc" onclick="EditorLevel.PNETOOLS.TransDiv(-5)"> Make Layer More Transparent </a>
+<a href="javascript:void(0)" class="menuc" onclick="EditorLevel.PNETOOLS.TransDiv(5)"> Make Layer Less Transparent </a>
+
+<a href="javascript:void(0)" class="menuc pnedisabled"> Invert Selection </a>
+<a href="javascript:void(0)" class="menuc pnedisabled"> Add Custom Class </a>
+<a href="javascript:void(0)" class="menuc pnedisabled"> Add Layer Mask </a>
+<a href="javascript:void(0)" class="menuc pnedisabled"> Delete Layer Mask </a>
+<a href="javascript:void(0)" class="menuc pnedisabled"> Apply Layer Mask </a>
+<a href="javascript:void(0)" class="menuc pnedisabled"> Save Layer Mask </a>
+<a href="javascript:void(0)" class="menuc pnedisabled"> Import Layer Mask </a>
+<a href="javascript:void(0)" class="menuc pnedisabled"> Import Clipping Path </a>
+<a href="javascript:void(0)" class="menuc pnedisabled"> Create Clipping Path </a>
+<a href="javascript:void(0)" class="menuc pnedisabled"> Save Clipping Path </a>
+<a href="javascript:void(0)" class="menuc pnedisabled"> Apply Clipping Path </a>
+</div> </li>
+
+
+
+  <li class="dropdown nodisplay">
+    <a href="javascript:void(0)" class="dropbutton">SVG</a>
+    <div class="dropdownc">
+
+<a href="javascript:void(0)" class="menuc pnedisabled"> New Custom Beizer 2D </a>
+
+<a href="javascript:void(0)" class="menuc pnedisabled"> Save SVG </a>
+<a href="javascript:void(0)" class="menuc pnedisabled"> Import SVG </a>
+<a href="javascript:void(0)" class="menuc pnedisabled"> Save As Clipping Path</a>
+<a href="javascript:void(0)" class="menuc pnedisabled"> Save As Mask</a>
+<a href="javascript:void(0)" class="menuc pnedisabled"> New SVG Circle</a>
+<a href="javascript:void(0)" class="menuc pnedisabled"> New Squere </a>
+<a href="javascript:void(0)" class="menuc pnedisabled"> New Triangle </a>
+<a href="javascript:void(0)" class="menuc pnedisabled"> New Rectangle </a>
+<a href="javascript:void(0)" class="menuc pnedisabled"> New Star </a>
+<a href="javascript:void(0)" class="menuc pnedisabled"> New Hexagon</a>
+<a href="javascript:void(0)" class="menuc pnedisabled"> new Half Sircle</a>
+<a href="javascript:void(0)" class="menuc pnedisabled"> New Custom Beizer 3D </a>
+<a href="javascript:void(0)" class="menuc pnedisabled"> New Crescent </a>
+<a href="javascript:void(0)" class="menuc pnedisabled"> New Wave </a>
+</div> </li>
+
+
+
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbutton">Embed</a>
+    <div class="dropdownc">
+
+<a href="javascript:void(0)" class="menuc pnedisabled"> Embed PDF </a>
+<a href="javascript:void(0)" class="menuc" onclick="EditorLevel.PNETOOLS.EmbedHTML()"> Embed HTML </a>
+<a href="javascript:void(0)" class="menuc pnedisabled"> Embed Javascript </a>
+<a href="javascript:void(0)" class="menuc pnedisabled comingsoon" onclick="EditorLevel.PlugNedit.GetTitleobject('Video')"> Embed Video </a>
+<a href="javascript:void(0)" class="menuc" onclick="EditorLevel.PlugNedit.GetTitleobject('Embed YouTube Video')"> Embed Youtue </a>
+<a href="javascript:void(0)" class="menuc pnedisabled"> Embed Header Object </a>
+<a href="javascript:void(0)" class="menuc pnedisabled"> Embed CSS Head</a>
+<a href="javascript:void(0)" class="menuc pnedisabled"> Embed CSS Footer</a>
+<a href="javascript:void(0)" class="menuc pnedisabled"> Embed javascript Footer</a>
+<a href="javascript:void(0)" class="menuc pnedisabled"> Embed javascript header</a>
+
+</div> </li>
+
+  <li class="dropdown nodisplay">
+    <a href="javascript:void(0)" class="dropbutton nodisplay">Social</a>
+    <div class="dropdownc">
+<a href="javascript:void(0)" class="menuc pnedisabled comingsoon" onclick="EditorLevel.PlugNedit.GetTitleobject('Twitter Share')"> Twitter Share </a>
+<a href="javascript:void(0)" class="menuc pnedisabled comingsoon" onclick="EditorLevel.PlugNedit.GetTitleobject('Facebook Like')" > Facebook Like </a>
+<a href="javascript:void(0)" class="menuc pnedisabled comingsoon" onclick="EditorLevel.PlugNedit.GetTitleobject('Facebook Share')"> Facebook Share </a>
+<a href="javascript:void(0)" class="menuc pnedisabled comingsoon" onclick="EditorLevel.PlugNedit.GetTitleobject('Google+ Share')" > Google Share </a>
+<a href="javascript:void(0)" class="menuc pnedisabled comingsoon"  onclick="EditorLevel.PlugNedit.GetTitleobject('Google +1')"> Google +1 </a>
+
+</div> </li>
+
+
+
+
+
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbutton">View</a>
+    <div class="dropdownc">
+
+<a href="javascript:void(0)" class="menuc pnedisabled"> Zoom In </a>
+<a href="javascript:void(0)" class="menuc pnedisabled"> Zoom Out </a>
+<a href="javascript:void(0)" class="menuc pnedisabled"> Reset Palette Location </a>
+<a href="javascript:void(0)" class="menuc pnedisabled"> Save Palette Location </a>
+<a href="javascript:void(0)" class="menuc" onclick="EditorLevel.PlugNedit.SideBar('4')" > Layers Palette </a>
+<a href="javascript:void(0)" class="menuc pnedisabled"> History Palette </a>
+<a href="javascript:void(0)" class="menuc" onclick="EditorLevel.PlugNedit.SideBar('1')"> Text Palette </a>
+<a href="javascript:void(0)" class="menuc" onclick="EditorLevel.PlugNedit.SideBar('6')"> Boxes Palette </a>
+<a href="javascript:void(0)" class="menuc" onclick=""> Fonts Palette </a>
+<a href="javascript:void(0)" class="menuc" onclick="EditorLevel.PlugNedit.SideBar('5')"> Images Palette </a>
+<a href="javascript:void(0)" class="menuc pnedisabled"> Navigator Palette </a>
+<a href="javascript:void(0)" class="menuc" onclick="EditorLevel.PlugNedit.SideBar('3')"> Page Properties Palette </a>
+<a href="javascript:void(0)" class="menuc" onclick="EditorLevel.PNETOOLS.SideBar('0')"> Special Effects Palette </a>
+<a href="javascript:void(0)" class="menuc pnedisabled"> Time Line Palette </a>
+<a href="javascript:void(0)" class="menuc"> Full Screen Mode </a>
+</div> </li>
+
+
+
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbutton">Resources</a>
+    <div class="dropdownc">
+<a href="javascript:void(0)" class="menuc" onclick="EditorLevel.PlugNedit.RE('shutterstockwrap').style.display='block';EditorLevel.PlugNedit.RE('shutterstock').style.display='block';EditorLevel.PlugNedit.RE('shutterstock').src='shutterstock.html'" > Stock Photo Gallery </a>
+</div> </li>
+
+
+
+  <li class="dropdown nodisplay">
+    <a href="javascript:void(0)" class="dropbutton nodisplay">Effects</a>
+    <div class="dropdownc">
+<a href="javascript:void(0)" class="menuc pnedisabled  comingsoon" onclick="EditorLevel.PNETOOLS.SideBar('0')"> Transitions Menu </a>
+<a href="javascript:void(0)" class="menuc pnedisabled"> Parallax Scroll Background </a>
+<a href="javascript:void(0)" class="menuc pnedisabled"> Parallax Scroll Background </a>
+<a href="javascript:void(0)" class="menuc pnedisabled"> Parallax Scroll Cover </a>
+<a href="javascript:void(0)" class="menuc pnedisabled"> Parallax Scroll Reveal </a>
+<a href="javascript:void(0)" class="menuc pnedisabled  comingsoon"> Left To Right  </a>
+<a href="javascript:void(0)" class="menuc pnedisabled  comingsoon"> Right To Left </a>
+<a href="javascript:void(0)" class="menuc pnedisabled  comingsoon"> Bottom To Top </a>
+<a href="javascript:void(0)" class="menuc pnedisabled  comingsoon"> Top To Bottom </a>
+<a href="javascript:void(0)" class="menuc pnedisabled"> diagonal Down </a>
+<a href="javascript:void(0)" class="menuc pnedisabled"> diagonal Up </a>
+<a href="javascript:void(0)" class="menuc pnedisabled"> Bounce In </a>
+<a href="javascript:void(0)" class="menuc pnedisabled"> Bounce In </a>
+<a href="javascript:void(0)" class="menuc pnedisabled  comingsoon"> Grow </a>
+<a href="javascript:void(0)" class="menuc pnedisabled  comingsoon"> Fade In </a>
+<a href="javascript:void(0)" class="menuc pnedisabled"> New Time Line</a>
+<a href="javascript:void(0)" class="menuc pnedisabled"> Image Sharpen</a>
+<a href="javascript:void(0)" class="menuc pnedisabled"> Image Crop</a>
+<a href="javascript:void(0)" class="menuc pnedisabled"> Brightness / Contrast</a>
+<a href="javascript:void(0)" class="menuc pnedisabled"> Filters </a>
+</div> </li>
+
+
+
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbutton">Help</a>
+    <div class="dropdownc">
+<a href="javascript:void(0)" class="menuc pnedisabled"> Help </a>
+<a href="javascript:void(0)" class="menuc pnedisabled"> Help Forums </a>
+<a href="javascript:void(0)" class="menuc" onclick="EditorLevel.PlugNedit.RE('pnehelpvids').src='http://plugnedit.com/Fluxvideohelp/fluxhelp/vd.html';EditorLevel.PlugNedit.RE('pnehelpvidswrap').style.display='block';EditorLevel.PlugNedit.RE('pnehelpvids').style.display='block';" > Help Videos </a>
+<a href="javascript:void(0)" class="menuc pnedisabled"> Help Documentation </a>
+<a href="https://plugneditflux.binpress.com/product/flux-live-simply-symphony-for-wordpress---/3360" class="menuc" target="_blank"> Binpress Ticket Support </a>
+<a href="mailto:contact@plugnedit.com" target="_blank" class="menuc"> Email </a>
+<a href="javascript:void(0)" class="menuc pnedisabled"> Chat </a>
+<a onclick="document.getElementById('aboutflux').style.display=''" class="menuc"> About </a>
+</div> </li>
+
+ <li class="dropdown" style="min-width:20%">
+    <a href="https://plugneditflux.binpress.com" target="_blank" class="dropbutton">Full Version</a>
+
+</li>
+
+</ul>
+
+
+</div>
+
+  
+ 
+
+
+
+
+<div style="display:none;">
+    
+    
+     <img alt="New Link"  onmouseover="Help('Link.')"  onclick="EditorLevel.PNETOOLS.DisplayOptionsMenu();"  id="chyperlink" title="Create Hyperlink" style="cursor:pointer;max-height:20px;padding-top:4px">
+
+ <!-- <img title="New Text / HTML Object" src="assets/gluicon/x-office-document.png" alt="New Text / HTML Object" id="NewText" onmouseover="Help('New Text Box')"  onclick="EditorLevel.PlugNedit.RE('pnenewhtmlwrap').style.display=  'block';EditorLevel.PlugNedit.RE('pnenewhtml').style.display='';" style="padding-left:15px">
+
+
+ <img title="Headline" src="assets/headlineblack.png" alt="Insert Headline"  id="NewHeadline" onmouseover="Help('Insert Headline')"  onclick="EditorLevel.PlugNedit.NewHTMLLayer(undefined, undefined, undefined, true)">
+ 
+ -->
+
+
+   <!--
+  
+ <img title="Media Gallery" src="assets/gluicon/image-x-generic.png" alt="Insert Image" id="NewImage" onclick="EditorLevel.PlugNedit.RE('pneimageframewrap').style.display='block';EditorLevel.PlugNedit.RE('pneimageframewrap').style.visibility='visible';EditorLevel.PlugNedit.RE('pneimageframewrap').style.zIndex='7777';if (!EditorLevel.PlugNedit.RE('pneimageframe').src.match('gallery')){EditorLevel.PlugNedit.RE('pneimageframe').style.display='block';EditorLevel.PlugNedit.RE('pneimageframe').src=EditorLevel.PlugNedit.CanvasWindow.getElementById('PNEFluxGallerURL').value;};EditorLevel.PlugNedit.RE('pneimageframe').style.display='block';EditorLevel.PlugNedit.RE('pneimageframe').style.zIndex='7777';EditorLevel.PlugNedit.RE('pneimageframe').style.visibility='visible'" onmouseover="Help('Insert Image.')" > <img src="assets/gluicon/text-html.png"  title="Embed/Insert HTML" onmouseover="Help('Insert Embed')"  onclick="EditorLevel.PNETOOLS.EmbedHTML()">
+ 
+ 
+ <img src="assets/gluicon/text-x-script.png" title="Page Properties Menu" alt="Properties Menu" onmouseover="Help('Properties menu.')"  onclick="EditorLevel.PlugNedit.SideBar('3')"> &nbsp;&nbsp;
+
+
+
+<img title="Layers Menu" alt="Layers Menu" src="assets/gluicon/text-x-authors.png" onmouseover="Help('Layers menu.')"   onclick="EditorLevel.PlugNedit.SideBar('4')">
+
+
+<img title="Shutter Stock" alt="Shutter Stock" src="assets/gluicon/folder-remote.png" onmouseover="Help('Shutter Stock Photo Library.')"   onclick="EditorLevel.PlugNedit.RE('shutterstockwrap').style.display='block';EditorLevel.PlugNedit.RE('shutterstock').style.display='block';EditorLevel.PlugNedit.RE('shutterstock').src='shutterstock.html'"  style="cursor:pointer">
+
+<img alt="Trash Object" title="Delete Object" src="assets/gluicon/user-trash-full.png" onmouseover="Help('Trash Object.')" alt="Trash Object"   onclick="EditorLevel.PNETOOLS.DeleteLayers()">
+
+
+
+ 
+  <img src="assets/m2/32x32/Help.png" title="Help Videos" alt="Help Videos" id="helpvis" onclick="EditorLevel.PlugNedit.RE('pnehelpvids').src='http://plugnedit.com/Fluxvideohelp/fluxhelp/vd.html';EditorLevel.PlugNedit.RE('pnehelpvidswrap').style.display='block';EditorLevel.PlugNedit.RE('pnehelpvids').style.display='block';" onmouseover="Help('Help Videos.')" style="cursor:pointer;max-height:20px;padding-top:4px">  
+  
+
+<img alt="Undo" title="Undo" src="assets/m2/32x32/Undo.png" onmouseover="Help('Undo.')"   onclick="EditorLevel.PNETOOLS.UndoIt(-1)" style="max-height:20px;padding-top:4px">
+ 
+ <img src="assets/m2/32x32/Redo.png" title="Redo" alt= "Redo" onmouseover="Help('Redo.')"  onclick="EditorLevel.PNETOOLS.UndoIt(1)"  style="max-height:20px;padding-top:4px">
+
+-->
+
+
+<input class="button-primary"  id="Save & Publsh" name=" Save & Publsh !" onclick="document.getElementById('FluxType').value='publish';document.getElementById('SubmitHTML').target='';EditorLevel.PNETOOLS.SavePage()" style="margin-right:25px" type="button" value=" Publish ! "> 
+ 
+<input class="button-primary"  id="Save As Draft" name=" Save Draft !" onclick="document.getElementById('FluxType').value='draft';document.getElementById('SubmitHTML').target='';EditorLevel.PNETOOLS.SavePage()" style="" type="button" value=" Draft ! "> 
+  
+<input class="button-primary"  id="Trash" name=" Trash !" onclick="document.getElementById('FluxType').value='trash';document.getElementById('SubmitHTML').target='';document.getElementById('SubmitHTML').submit()" style="" type="button" value=" Trash ! "> 
+    
+<!--<input class="button-primary"  id="Delete" name=" Delete !" onclick="EditorLevel.PNETOOLS.SavePage()" style="" type="button" value=" Reload ! "> -->
+
+<input class="button-primary"  id="Save & Preview! " name=" Save & Preview !" onclick="document.getElementById('FluxType').value='save';document.getElementById('SubmitHTML').target='';EditorLevel.PNETOOLS.SavePage()" style="" type="button" value=" Save & Preview ! "> 
+
+<input class="button-primary"  id=" Admin " name=" Save & Admin! " onclick="document.getElementById('FluxAdmin').value='true';document.getElementById('FluxType').value='save';document.getElementById('FluxReturnUrl').value=EditorLevel.PlugNedit.CanvasWindow.getElementById('PNEFluxAdminurl').value;document.getElementById('SubmitHTML').target='';EditorLevel.PNETOOLS.SavePage()" style="" type="button" value=" Save & Admin! "> 
+
+<!--
+
+<img title="Mobile View" src="assets/mobile.png" alt="Mobile View" onmouseover="Help(' Mobile View. ')"  onclick="EditorLevel.PNETOOLS.SwithToTemplateCanvas('Mobile')" style="padding-left:30px"><img alt="Desktop View" src="assets/desktop.png"  onclick="EditorLevel.PNETOOLS.SwithToTemplateCanvas('Full')" title="Desk Top View" onmouseover="Help('Desk Top View.')" >
+
+ -->
+
+<input class="button-primary"  id=" Exit " name=" Exit! " onclick="window.location.href  = ExitPage.replace('PNENoWPToolbars','exit')" style="" type="button" value=" Exit "> 
+</div>
+
+<form id="SubmitHTML" name="SubmitHTML" action="" method="post">
+<input type="hidden" name="FluxPageID" id="pageid" value="">
+<input type="hidden" name="FluxUpdate" id="PlugneditUpdate" value="1">
+<input type="hidden" name="FluxPageContent" id="PlugNeditPageContent" value="">
+<input type="hidden" name="FluxReturnUrl" id="FluxReturnUrl" value="">
+<input type="hidden" name="FluxType" id="FluxType" value="">
+<input type="hidden" name="FluxAdmin" id="FluxAdmin" value="false">
+<input type="hidden" name="pnedbEditorAction2" id="pnedbEditorAction2" value="">
+
+
+</form>
+</div>
+
+<iframe name="EntryFrame"  id="EntryFrame" src="index.html" style="margin:auto;overflow:scroll;width:100%;height:96%;background-color:white;border:0px;margin:0px;padding:0px;"> </iframe>
+</div>
+
+<script>Loadeditor ()
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,69 @@
+body:before {
+    display: none !important;
+}
+
+body:after {
+    display: none !important;
+}
+
+.FluxVid {
+    position: fixed;
+    top: -100px;
+    left: -15vw;
+    overflow: hidden;
+    z-index: -10;
+    min-width: 130vw;
+    min-height: 130vh;
+}
+
+.FluxVidBack {
+    width: 130vw;
+    height: 130vh;
+    max-width: 130wv;
+    max-height: 130vh;
+}
+
+.FluxVidFrame {
+    min-width: 130vw;
+    min-height: 130vh;
+}
+
+@media only screen and (min-width: 0px) and (max-width: 967px) {
+    .FluxVidFrame {
+        display: none;
+    }
+
+    .FluxVid {
+        max-width: 100%;
+        background-color: #fff;
+    }
+}
+
+#bodyfallback {
+   overflow-x: hidden;
+    background: no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#fluximagebackground {
+        background-size: cover;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        background-position: center center;
+        background-repeat: no-repeat;
+        z-index :-1;
+        top:0px
+   }
+   
+   body {
+   overflow-x: hidden;
+   }
+   
+   
